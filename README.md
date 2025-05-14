@@ -1,4 +1,5 @@
 # AWS Blog
+- Built in doc-based (google drive)
 
 ## Environments
 - Preview: https://main--aws-blog--adobedevxsc.aem.page/
