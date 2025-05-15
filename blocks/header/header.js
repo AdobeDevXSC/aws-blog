@@ -209,6 +209,13 @@ export default async function decorate(block) {
   const navWrapper = document.createElement('div');
   navWrapper.className = 'nav-wrapper';
   navWrapper.append(nav);
+
+  const sections = nav.querySelectorAll(':scope > .section');
+  const lastTwoSections = Array.from(sections).slice(-2);
+  lastTwoSections[0].classList.add('navbar-one');
+  lastTwoSections[1].classList.add('navbar-two');
+  navWrapper.append(...lastTwoSections);
+
   block.append(navWrapper);
 
   if (getMetadata('breadcrumbs').toLowerCase() === 'true') {

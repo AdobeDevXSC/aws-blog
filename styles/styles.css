@@ -75,7 +75,13 @@ body.appear {
 }
 
 header {
-  height: var(--nav-height);
+  height: 142px;
+}
+
+@media (width <= 1250px) {
+  header {
+    height: var(--nav-height);
+  }
 }
 
 h1, h2, h3,
