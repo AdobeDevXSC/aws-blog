@@ -89,8 +89,8 @@ h4, h5, h6 {
   font-family: var(--heading-font-family);
   font-weight: 600;
   line-height: 1.25;
-  margin-top: 1em;
-  margin-bottom: .5em;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   scroll-margin: calc(var(--nav-height) + 1em);
 }
 
@@ -194,12 +194,12 @@ main img {
 
 /* sections */
 main .section {
-  padding: 64px 16px;
+  padding: 48px 16px;
 }
 
 @media (width >= 600px) {
   main .section {
-    padding: 64px 32px;
+    padding: 48px 32px;
   }
 }
 

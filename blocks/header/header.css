@@ -15,7 +15,7 @@ header nav#nav {
   align-items: center;
   gap: 0 2em;
   margin: auto;
-  max-width: 1700px;
+  max-width: 2000px;
   height: var(--nav-height);
   padding: 0 1rem;
   font-family: var(--body-font-family);
@@ -403,9 +403,8 @@ header .breadcrumbs ol li:last-of-type {
 }
 
 header .section.navbar-one {
-	max-width: 1700px;
+	max-width: 2000px;
 	margin: 0 auto;
-	padding: 0 1rem;
 	padding-bottom: 10px;
 }
 
@@ -454,7 +453,7 @@ header .section.navbar-one ul>li:first-of-type {
 }
 
 header .section.navbar-two {
-	max-width: 1700px;
+	max-width: 2000px;
 	margin: 0 auto;
 	padding: 0 1rem;
 	background-color: #fff;
