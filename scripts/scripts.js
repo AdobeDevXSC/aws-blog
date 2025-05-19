@@ -129,6 +129,7 @@ export function shouldBeDisplayed(date) {
  * to add/remove a template, just add/remove it in the list below
  */
 const TEMPLATE_LIST = [
+  'article'
 ];
 
 /**
@@ -139,6 +140,7 @@ async function decorateTemplates(main) {
   try {
     const template = getMetadata('template');
     const templates = TEMPLATE_LIST;
+
     if (templates.includes(template)) {
       const mod = await import(`../templates/${template}/${template}.js`);
       loadCSS(`${window.hlx.codeBasePath}/templates/${template}/${template}.css`);
