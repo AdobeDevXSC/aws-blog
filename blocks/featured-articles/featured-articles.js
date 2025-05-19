@@ -1,7 +1,7 @@
 export default async function decorate(block) {
-  console.log("featured-articles block: ", block);
-
   const links = block.querySelectorAll('a');
+  const list = document.createElement('ul');
+  list.className = 'featured-article-list';
 
   for (const link of links) {
     const url = link.href;
@@ -10,12 +10,16 @@ export default async function decorate(block) {
       const metadata = await fetchMetadata(url);
       if (metadata) {
         const card = createCard(metadata, url);
-        link.parentElement.replaceWith(card);
+        list.appendChild(card);
       }
     } catch (err) {
       console.error(`Error fetching metadata for ${url}:`, err);
     }
   }
+
+  // Clear the block and append the list
+  block.innerHTML = '';
+  block.appendChild(list);
 }
 
 async function fetchMetadata(url) {
@@ -34,16 +38,15 @@ async function fetchMetadata(url) {
 }
 
 function createCard({ title, description, image }, url) {
-  const card = document.createElement('div');
-  card.className = 'featured-article-card';
+  const card = document.createElement('li');
+  card.classList.add('card-item');
   card.innerHTML = `
-    <a href="${url}" class="card-link" target="_blank" rel="noopener noreferrer">
-      <div class="card-image">${image ? `<img src="${image}" alt="${title}"/>` : ''}</div>
-      <div class="card-content">
-        <h3>${title}</h3>
-        <p>${description}</p>
-      </div>
-    </a>
+    <div class="card-image">${image ? `<img src="${image}" alt="${title}"/>` : ''}</div>
+    <div class="card-content">
+      <a href="${url}" target="_blank" rel="noopener noreferrer"><h5>${title}</h5></a>
+      <p>${description}</p>
+      <a href="${url}" target="_blank" rel="noopener noreferrer">Read the post >></a>
+    </div>
   `;
   return card;
 }
