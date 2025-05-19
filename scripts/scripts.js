@@ -128,9 +128,7 @@ export function shouldBeDisplayed(date) {
 /**
  * to add/remove a template, just add/remove it in the list below
  */
-const TEMPLATE_LIST = [
-  'article'
-];
+const TEMPLATE_LIST = [ 'article' ];
 
 /**
  * Run template specific decoration code.
