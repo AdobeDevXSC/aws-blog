@@ -82,7 +82,7 @@ export default async function decorate(block) {
 
       articleEl.innerHTML = `
         <h4><a href="${article.path}">${article.title}</a></h4>
-        <p class="author-publish-date">By ${article.author}, ${formatDate(article.lastModifiedDate)}</p>
+        <p class="author-publish-date">${article.author}, ${formatDate(article.lastModifiedDate)}</p>
         <p class="description">${article.description}</p>
       `;
       content.appendChild(articleEl);
