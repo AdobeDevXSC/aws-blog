@@ -10,7 +10,7 @@ export default async function decorate(block) {
       const metadata = await fetchMetadata(url);
       if (metadata) {
         const card = createCard(metadata, url);
-        link.closest('.button-container').replaceWith(card);
+        link.parentElement.replaceWith(card);
       }
     } catch (err) {
       console.error(`Error fetching metadata for ${url}:`, err);
